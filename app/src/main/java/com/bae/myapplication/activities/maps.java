@@ -1,0 +1,41 @@
+package com.bae.myapplication.activities;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.Toast;
+
+import com.bae.myapplication.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class maps extends AppCompatActivity implements OnMapReadyCallback {
+
+    private GoogleMap myMap;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
+        Toast.makeText(this, "Map activity Started", Toast.LENGTH_SHORT).show();
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        myMap = googleMap;
+
+        LatLng sydney = new LatLng(-34, 151);
+        myMap.addMarker(new MarkerOptions().position(sydney).title("Sydney"));
+        myMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+    }
+}

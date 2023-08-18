@@ -13,37 +13,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-
-        <!--  Taking Picture Activity      -->
         <activity
-            android:name="com.bae.myapplication.activities.MenuActivity"
-            android:screenOrientation="landscape"
-            android:exported="true">
+            android:name=".activities.maps"
+            android:exported="false" />
+        <!-- Taking Picture Activity -->
+        <activity
+            android:name=".activities.MenuActivity"
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!--  After taking picture Activity      -->
+        </activity> <!-- After taking picture Activity -->
         <activity
-            android:name="com.bae.myapplication.activities.DataCaptureActivity"
-            android:screenOrientation="landscape">
-        </activity>
-
-        <!--  Showing the results activity      -->
+            android:name=".activities.DataCaptureActivity"
+            android:screenOrientation="landscape" /> <!-- Showing the results activity -->
         <activity
-            android:name="com.bae.myapplication.activities.DataAnalysisActivity"
-            android:screenOrientation="landscape">
-        </activity>
-
-        <!-- Activity for browsing saved data   -->
+            android:name=".activities.DataAnalysisActivity"
+            android:screenOrientation="landscape" /> <!-- Activity for browsing saved data -->
         <activity
-            android:name="com.bae.myapplication.activities.SavedDataBrowsingActivity"
-            android:screenOrientation="landscape">
-        </activity>
-
-        <!-- Activity for graphing data   -->
+            android:name=".activities.SavedDataBrowsingActivity"
+            android:screenOrientation="landscape" /> <!-- Activity for graphing data -->
         <activity
             android:name="com.bae.myapplication.activities.DataGraphViewActivity"
             android:screenOrientation="landscape">
@@ -59,6 +51,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/MAPS_API_KEY" />
     </application>
 
 </manifest>

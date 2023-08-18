@@ -116,6 +116,14 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     /**
+     * Start Map Activity
+     */
+    public void startMapsActivity(View v){
+        Intent changeActivity = new Intent(MenuActivity.this, maps.class);
+        startActivity(changeActivity);
+    }
+
+    /**
      * Listener for tutorial mode switch
      */
     private class TutorialOnCheckListener implements CompoundButton.OnCheckedChangeListener {

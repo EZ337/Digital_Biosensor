@@ -19,6 +19,7 @@ public class DataProcessor {
      * rPoints of each sampled point.
      */
     private ArrayList<Double> rPoints = new ArrayList<>();
+    private ArrayList<Double> dataPoints = new ArrayList<>();
 
     private double avg_rval;
     private double avg_gval;
@@ -59,7 +60,13 @@ public class DataProcessor {
 //            double rPoint = (double) (r + g) / b;
 //            double rPoint = (double) r / (r + g + b);
             double rPoint = (double) (r + g + b) / r;
-            rPoints.add(rPoint);
+            rPoints.add(rPoint);    // May be problematic since it is irrelevant now
+
+
+            //int color = sampleColors.get(i);
+//            alpha = (double) r/g;
+//            beta = alpha * Math.exp(alpha);
+//            dataPoints.add(alpha);
         }
 
         // Calculate r,g,b
@@ -117,6 +124,13 @@ public class DataProcessor {
      */
     public ArrayList<Double> getRPoints() {
         return rPoints;
+    }
+
+    /**
+     * @return Datapoints by Alpha Value
+     */
+    public ArrayList<Double> getDataPoints() {
+        return dataPoints;
     }
 
     /**
