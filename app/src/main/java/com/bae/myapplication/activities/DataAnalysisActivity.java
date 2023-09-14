@@ -308,6 +308,10 @@ public class DataAnalysisActivity extends AppCompatActivity {
     private class SaveResultsMenuOnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
+            //TODO Unfinished. You cannot save
+            //Intent openMapIntent = new Intent(DataAnalysisActivity.this, maps.class);
+            //startActivity(openMapIntent);
+            // And then we open the Save Results (Gonna need to do this later)
             saveResultsCL.setVisibility(View.VISIBLE);
         }
     }
